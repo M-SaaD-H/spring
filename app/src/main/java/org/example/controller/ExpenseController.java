@@ -1,14 +1,17 @@
 package org.example.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
+import org.example.model.Expense;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/expenses")
+@RequestMapping("/api/expense")
 public class ExpenseController {
-  @GetMapping
-  public String test() {
-    return "API is working";
+  @PostMapping
+  public String addExpense(@RequestBody Expense body) {
+    System.out.println("Body: " + body);
+    return "Got req";
   }
 }
