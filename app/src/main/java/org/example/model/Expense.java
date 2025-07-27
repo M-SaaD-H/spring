@@ -1,5 +1,6 @@
 package org.example.model;
 
+import org.example.dto.ExpenseDto;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -12,6 +13,13 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Expense {
+  public Expense(ExpenseDto expenseDto) {
+    this.amount = expenseDto.getAmount();
+    this.description = expenseDto.getDescription();
+    this.category = expenseDto.getCategory();
+    this.paymentMethod = expenseDto.getPaymentMethod();
+  }
+
   @Id
   private String id;
   private String userId;
