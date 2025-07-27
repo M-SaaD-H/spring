@@ -8,5 +8,3 @@ app/bin
 app/bin/main
 app/bin/test
 
-app/src/main/resources
-app/src/main/resources/application.properties
